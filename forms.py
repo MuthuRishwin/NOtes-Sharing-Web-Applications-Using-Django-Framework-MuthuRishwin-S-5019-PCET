@@ -1,10 +1,8 @@
+# forms.py
 from django import forms
-from .models import UserProfile
+from .models import File
 
-class UserProfileForm(forms.ModelForm):
+class FileModelForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = ['name', 'user_type', 'roll_number', 'teacher_id', 'email', 'password','forgot']
-        widgets = {
-            'password': forms.PasswordInput(),   
-        }
+        model = File
+        fields = ['email', 'file', 'permission']
